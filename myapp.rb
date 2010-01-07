@@ -25,6 +25,10 @@ get '/who', :agent => /MSIE 7/ do
   builder :who
 end
 
+get '/who' do
+  haml :whoelse
+end
+
 get '/env' do
 	haml :env
 end
@@ -44,9 +48,12 @@ __END__
   %li= "Root: #{options.root}"
 
 @@who
-	builder do |xml|
-		xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
-    xml.node do
-      xml.subnode "Seriously? Internet Explorer 7? Upgrade and come back."
-    end
-  end
+builder do |xml|
+	xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+	xml.node do
+		xml.subnode "Seriously? Internet Explorer 7? Upgrade and come back."
+	end
+end
+
+@@whoelse
+%h2 You seem to be using something other than IE7 to browse the web...
