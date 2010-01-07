@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'builder'
 
 get '/' do
   haml :index
@@ -21,7 +22,7 @@ get '/goodbye/:name' do|name|
 end
 
 get '/who', :agent => /MSIE 7/ do
-  "Seriously? Internet Explorer 7? Upgrade and come back."
+  builder :who
 end
 
 get '/env' do
@@ -41,3 +42,11 @@ __END__
   %li= "Environment: #{options.environment}"
   %li= "PWD: #{Dir.pwd}"
   %li= "Root: #{options.root}"
+
+@@who
+	builder do |xml|
+		xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+    xml.node do
+      xml.subnode "Seriously? Internet Explorer 7? Upgrade and come back."
+    end
+  end

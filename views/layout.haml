@@ -26,7 +26,10 @@
 	%body(style="filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0CFE2', startColorstr='#FFFFFF', gradientType='0');")
 		.container.showgrid
 			%div(class="column span-21 prepend-1 append-2 first last" id="header")
-				%p(class="title")Fly Me To The Moon
+				%p(class="title")
+					Fly Me To The Moon
+					%a(href="/")
+						%img(src="/images/house_go.png" alt="Moon Base")
 				%hr/
 			%div(class="column span-15 prepend-1 colborder first")
 				= yield
