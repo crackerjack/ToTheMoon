@@ -21,7 +21,7 @@ get '/goodbye/:name' do|name|
   haml :goodbye, :locals => { :name => name }
 end
 
-get '/who', :agent => /MSIE 7/ do
+get '/who', :agent => /MSIE/ do
   builder :who
 end
 
@@ -51,9 +51,9 @@ __END__
 builder do |xml|
 	xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
 	xml.node do
-		xml.subnode "Seriously? Internet Explorer 7? Upgrade and come back."
+		xml.subnode "Seriously? Internet Explorer? Install a real browser and come back."
 	end
 end
 
 @@whoelse
-%h2 You seem to be using something other than IE7 to browse the web...
+%h2 You seem to be using something other than IE to browse the web... Congratulations!
