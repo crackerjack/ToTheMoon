@@ -11,7 +11,7 @@ require 'dm-timestamps'
 require 'coderay'
 
 # Setup the sqlite3db
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/toopaste.sqlite3")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/toopaste.sqlite3")
 
 # Define the model
 class Snippet
@@ -112,6 +112,7 @@ __END__
   %li= "Environment: #{options.environment}"
   %li= "PWD: #{Dir.pwd}"
   %li= "Root: #{options.root}"
+  %li= "Database URL: #{ENV['DATABASE_URL']}"
 
 @@who
 builder do |xml|
