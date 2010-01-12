@@ -17,14 +17,15 @@
 		<!-- Import fancy-type plugin for the sample page. -->
 		%link{:rel => "stylesheet", :href => "/css/blueprint/plugins/fancy-type/screen.css", :type => "text/css", :media => "screen, projection"}
 
-		<!-- CodeRay syntax highlighting CSS -->
+		<!-- Coderay syntax highlighting CSS -->
 		%link(rel="stylesheet" href="/css/coderay.css" type="text/css")
    
 		<!-- Homepage CSS -->
 		%link{:rel => "stylesheet", :href => "/css/site.css", :type => "text/css", :media => "screen, projection"}
 
 	%body(style="filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0CFE2', startColorstr='#FFFFFF', gradientType='0');")
-		.container.showgrid
+		.container 
+			<!-- .showgrid -->
 			%div(class="column span-21 prepend-1 append-2 first last" id="header")
 				%p(class="title")
 					Fly Me To The Moon
