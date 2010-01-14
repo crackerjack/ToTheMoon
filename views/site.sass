@@ -1,0 +1,58 @@
+!border_color = #ddd
+!text_color = #111
+!quiet_color = #666
+
+body
+  font-family: Verdana, "Bitstream Vera Sans", sans-serif
+
+
+h1, h2, h3, h4, h5, h6
+  color: !text_color
+
+
+a
+  color: #125AA7
+
+  &:hover
+    color: #000
+
+
+blockquote
+  color: !quiet_color
+
+
+pre
+  background: #eee
+  border: 1px solid !border_color
+
+
+hr
+  background: #B2CCFF
+  color: #B2CCFF
+
+
+table
+  border-top: 1px solid !border_color
+  border-left: 1px solid !border_color
+
+
+th, td
+  border-bottom: 1px solid !border_color
+  border-right: 1px solid !border_color
+
+
+p.quiet, .alt
+  color: !quiet_color
+
+
+p.title
+  color: !text_color
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 2em
+  margin-bottom: 0.75em
+
+
+#header p.title
+  font-size: 3em
+  line-height: 1
+  margin-bottom: 0.5em

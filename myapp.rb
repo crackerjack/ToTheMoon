@@ -99,6 +99,12 @@ get '/snip/:id' do
   end
 end
 
+# SASS CSS Stuff here
+get '/stylesheets/site.css' do
+  header 'Content-Type' => 'text/css; charset=utf-8'
+  sass :site
+end
+
 __END__
 @@ hello
 %h1= "Hello #{@name}!"
@@ -124,6 +130,12 @@ end
 
 @@whoelse
 %h2 You seem to be using something other than IE to browse the web... Congratulations!
+%p
+  :markdown
+    Textile
+    =======
+
+    Hello, *World* - from _Textile_
 
 @@new
 .snippet
@@ -133,10 +145,10 @@ end
     %input(type="submit" value="Save")
 
 @@show
-= @snippet.formatted_body
+-# HAML symbol ~ works like =, but preserves whitespace
+~ @snippet.formatted_body
 .sdate
-	Created on 
-	= @snippet.created_at.strftime("%B %d, %Y at %I:%M %p")
+	= "Created on #{@snippet.created_at.strftime("%B %d, %Y at %I:%M %p")}"
 %br/
 %a(href="/snip")
 	New Paste!

@@ -6,22 +6,21 @@
 		%title Fly me to the Moon
 		%meta(name="author" content="")
 
-		<!-- Blueprint CSS -->
+		/ Blueprint CSS
 		%link{:rel => "stylesheet", :href => "/css/blueprint/screen.css", :type => "text/css", :media => "screen, projection"}
 
 		%link{:rel => "stylesheet", :href => "/css/blueprint/print.css", :type => "text/css", :media => "print"}
-		<!--[if IE]>
-		%link{:rel => "stylesheet", :href => "/css/blueprint/ie.css", :type => "text/css", :media => "screen, projection"}
-		<![endif]-->
-
-		<!-- Import fancy-type plugin for the sample page. -->
+		/[if IE]
+			%link{:rel => "stylesheet", :href => "/css/blueprint/ie.css", :type => "text/css", :media => "screen, projection"}
+		
+		/ Import fancy-type plugin for the sample page.
 		%link{:rel => "stylesheet", :href => "/css/blueprint/plugins/fancy-type/screen.css", :type => "text/css", :media => "screen, projection"}
 
-		<!-- Coderay syntax highlighting CSS -->
+		/ Coderay syntax highlighting CSS
 		%link(rel="stylesheet" href="/css/coderay.css" type="text/css")
    
-		<!-- Homepage CSS -->
-		%link{:rel => "stylesheet", :href => "/css/site.css", :type => "text/css", :media => "screen, projection"}
+		/ Homepage CSS
+		%link{:rel => "stylesheet", :href => "/stylesheets/site.css", :type => "text/css", :media => "screen, projection"}
 
 	%body(style="filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0CFE2', startColorstr='#FFFFFF', gradientType='0');")
 		.container 
@@ -36,18 +35,30 @@
 				= yield
 			.column.span-5.append-2.last
 				%h4 Some Facts
-				%p Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.
+				%p
+					-# The pipes at the end are multi-line symbols in HAML
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; |
+					Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus     |
+					pulvinar neque, non cursus sem nisi vel augue.                                          |
 
 				.box
-					%p(class="last")Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida.
+					%p(class="last")
+						Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum   |
+						egestas lorem. Duis ac sem sagittis elit tincidunt gravida.                           |
 
-				%p(class="quiet")Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.
+				%p(class="quiet")
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; |
+					Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus     |
+					pulvinar neque, non cursus sem nisi vel augue.                                          |
 
 				%h5 Incremental leading
-				%p(class="incr")Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.
+				%p(class="incr")
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; |
+					Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus     |
+					pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.     |
 
-			%div(class="column span-20 prepend-2 append-2 first last" id="footer")
+			%div(class="column span-21 prepend-1 append-2 first last" id="footer")
 				%hr/
 				%p
-					This website was created with 
+					This website was created with
 					%a(href="http://www.sinatrarb.com")Sinatra
