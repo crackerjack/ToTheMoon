@@ -63,6 +63,10 @@ get '/who', :agent => /MSIE/ do
   builder :who
 end
 
+get '/who', :agent => /iPhone/ do
+  haml :iphone
+end
+
 get '/who' do
   haml :whoelse
 end
@@ -136,6 +140,15 @@ end
     =======
 
     Hello, *World* - from _Textile_
+    
+@@iphone
+%h2 How cool - a real iPhone!
+%p
+  :markdown
+    Textile
+    =======
+
+    Hello, *iPhone* - from _Textile_    
 
 @@new
 .snippet
