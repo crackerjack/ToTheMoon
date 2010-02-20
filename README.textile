@@ -1,3 +1,5 @@
-This is a proof of concept of using Sinatra and a host of other "technologies". 
+h1. Fly me to the Moon
+
+This is a *proof of concept* of using Sinatra and a host of other "technologies". 
 
 It is doubtful of how much use this bunch of files will be to anybody but myself, but you never can tell...
